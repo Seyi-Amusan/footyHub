@@ -1,0 +1,101 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;   
+
+
+.foreground{
+    background-image: linear-gradient(to right bottom,  #333, transparent);
+}
+
+.nav-div{
+    grid-template-columns: 1fr 80% 1fr;
+    height: 7vw;
+}
+
+.nav-icon{
+    grid-column: 3/4;
+}
+
+header{
+    grid-template-columns: 1fr;
+    grid-template-rows: 30% 1fr;
+}
+body{
+    color: #333;
+}
+.full-header{
+    grid-row: 1/3;
+    grid-column: 1/2;
+}
+
+.header-heading{
+    top: 50%;
+}
+
+h1{
+    @apply text-3xl md:text-5xl lg:text-8xl;
+}
+h2{
+    @apply text-2xl md:text-5xl text-center mb-12;
+}
+
+section{
+    @apply mb-36
+}
+
+.icon-next{
+    transform: translateX(0);
+}
+
+.icon-prev{
+    transform: translateX(-100%);
+}
+
+
+.icon-next-prev{
+    @apply shadow-md bg-white px-3 py-2 md:px-9 md:py-8 rounded-full cursor-pointer
+}
+
+.slider{
+    @apply relative h-80 m-2 md:h-96 md:mx-auto border-gray-400 text-white;
+    width: calc(100% - 1rem);
+    @media (min-width: 768px) {
+        width: 30rem;
+    }
+}
+
+.slider-content{
+    @apply h-full w-full md:w-4/5 md:mx-auto grid rounded-3xl;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+
+    > *{
+        grid-column: 1/2;
+        grid-row: 1/2;
+    }
+}
+
+.slider-img{
+    @apply h-full w-full outline-none
+}
+
+.slider-description{
+    @apply justify-self-end self-end text-end p-3
+}
+
+.slider-heading{
+    @apply mb-3 text-xl font-bold
+}
+
+
+footer{
+    background-color: #1d3557;
+}
+
+.footer-nav-list{
+    @apply text-white text-xl font-extralight text-center mx-4 my-3 p-3 bg-gray-800 rounded-2xl hover:-translate-y-1 transition duration-300
+}
+
+.fade-news{
+    background-image: linear-gradient(to top left, #5f1c16, transparent);
+}
