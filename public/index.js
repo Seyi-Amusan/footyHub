@@ -10,104 +10,94 @@ const prevNewsBtn = document.querySelector('#prev-news')
 
 const quickLinkHeading = document.querySelector('#quick-link-heading')
 const quickLinkTexts = Object.values(document.querySelector('#quick-link-text-box').children)
+const quickLinkImg = document.querySelector('#quick-link-bg-img')
 const prevQuickLinkBtn = document.querySelector('#prev-quick-link')
 const nextQuickLinkBtn = document.querySelector('#next-quick-link')
+
+
+const nav = document.querySelector('#nav')
+const navIcon = document.querySelector('#nav-icon')
+
+async function getNews () {
+    const response = await fetch(newsApiUrl)
+    const news = await response.json()
+    console.log(news.articles);
+}
+
+getNews()
 
 const quickLinkInfo = [
     {
         'heading': 'Matches',
-        'text': ['View Upcoming Fixtures', 'Check Match Results', 'Explore Match Highlights']
+        'text': ['View Upcoming Fixtures', 'Check Match Results', 'Explore Match Highlights'],
+        'src': '../assets/images/ql-img-matches.jpg'
     },
 
     {
         'heading': 'Leagues',
-        'text': ['Discover League Standings', 'Explore Season Overview', 'Learn About Different Leagues']
+        'text': ['Discover League Standings', 'Explore Season Overview', 'Learn About Different Leagues'],
+        'src': '../assets/images/ql-img-leagues.jpg'
     },
 
     {
         'heading': 'Players',
-        'text': ['Explore Player Profiles', 'Discover Top Performers', 'Learn About Player Statistics']
+        'text': ['Explore Player Profiles', 'Discover Top Performers', 'Learn About Player Statistics'],
+        'src': '../assets/images/ql-img-players.jpg'
     },
     {
         'heading': 'Teams',
-        'text': ['View Team Rosters', 'Explore Team History', 'Check Team Performance']
+        'text': ['View Team Rosters', 'Explore Team History', 'Check Team Performance'],
+        'src': '../assets/images/ql-img-teams.jpg'
     }
 ]
-
-
-
-let qlIndex = 0 //quickLinkIndex
-
-const displayQuickLinkInfo = (index) => {
-    quickLinkHeading.innerText = quickLinkInfo[index].heading //changes the heading
-
-    let c = 0
-    for (const text of quickLinkTexts) {
-        text.innerText = quickLinkInfo[index].text[c] //changes the text
-        c += 1
+const navFunc = () => {
+    if (navIcon.src.includes('open')) {
+        navIcon.src = '../assets/icons/icon-close-menu.svg'
+    } else{
+        navIcon.src = '../assets/icons/icon-open-menu.svg'
     }
+    nav.classList.toggle('hidden')
+    nav.classList.toggle('nav')
 
-}
-
-const nextQlInfo = () => {
-    qlIndex += 1 //increments quickLinkIndex
-    if (qlIndex > 3) {
-        qlIndex = 0; //makes sure quickLInkIndex doesnt exceed 3
-    }
-    displayQuickLinkInfo(qlIndex)
+    return
 }
 
 
+let quickLinkIndex = 0;
 
-
-const prevQlInfo = () => {
-    if (qlIndex <= 0) {
-        qlIndex = 3; //makes sure quickLInkIndex doesnt exceed 3
+const getNextIndex = (currIndex, maxIndex) => {
+    if (currIndex == maxIndex - 1) {
+        return 0; // Return 0 when resetting the index
     }
-    qlIndex -= 1
-    displayQuickLinkInfo(qlIndex)
+    currIndex += 1;
+    return currIndex; // Return the updated index
+};
+
+const getPrevIndex = (currIndex, maxIndex) => {
+    if (currIndex == 0) {
+        return maxIndex - 1
+    }
+    return currIndex -= 1
+}
+
+const displayQuickLinkInfo = (quickLinkIndex) => {
+    quickLinkHeading.innerText = quickLinkInfo[quickLinkIndex].heading
+    for (let i = 0; i < 3; i++) {
+        quickLinkTexts[i].innerText = quickLinkInfo[quickLinkIndex].text[i];
+    }
+    quickLinkImg.src = quickLinkInfo[quickLinkIndex].src
 }
 
 
+nextQuickLinkBtn.addEventListener('click', () => {
+    quickLinkIndex = getNextIndex(quickLinkIndex, 4)
+    displayQuickLinkInfo(quickLinkIndex)
+})
+prevQuickLinkBtn.addEventListener('click', () => {
+    quickLinkIndex = getPrevIndex(quickLinkIndex, 4)
+    displayQuickLinkInfo(quickLinkIndex)
+})
+navIcon.addEventListener('click', navFunc)
 
 
-nextQuickLinkBtn.addEventListener('click', nextQlInfo)
-prevQuickLinkBtn.addEventListener('click', prevQlInfo)
 
-
-
-
-// async function getData() {
-//     const response = await fetch(newsApiUrl)
-//     const data = await response.json()
-//     console.log(data.articles[0])
-//     displayNews(data.articles)
-//     // newsImg.src = data.articles[8].urlToImagedis
-// }
-
-// let counter = 0
-// function displayNews (news) {
-//     nextNewsBtn.addEventListener('click', () => {
-//         counter += 1
-//         console.log(counter);
-//         console.log('btn clicked');
-//         newsImg.src = news[counter].urlToImage
-//         newsHeading.innerText = news[counter].title
-//         newsText.innerText = news[counter].description
-//         newsLink.href = news[counter].url
-//     })
-    // console.log(counter);
-    // newsImg.src = news[counter].urlToImage
-    // newsHeading.innerText = news[counter].title
-// }
-
-
-// async function getData() {
-//     const response = await fetch(newsApiUrl)
-//     const data = await response.json()
-//     console.log(data.articles[0])
-//     console.log(counter);
-    
-//     // newsImg.src = data.articles[8].urlToImagedis
-// }
-// getData()

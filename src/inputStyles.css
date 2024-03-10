@@ -8,14 +8,8 @@
 }
 
 .nav-div{
-    grid-template-columns: 1fr 80% 1fr;
-    height: 7vw;
+    grid-template-columns: 1fr 85% 1fr;
 }
-
-.nav-icon{
-    grid-column: 3/4;
-}
-
 header{
     grid-template-columns: 1fr;
     grid-template-rows: 30% 1fr;
@@ -53,11 +47,11 @@ section{
 
 
 .icon-next-prev{
-    @apply shadow-md bg-white px-3 py-2 md:px-9 md:py-8 rounded-full cursor-pointer
+    @apply shadow-md bg-white px-3 py-2 md:px-9 md:py-8 rounded-full
 }
 
 .slider{
-    @apply relative h-80 m-2 md:h-96 md:mx-auto border-gray-400 text-white;
+    @apply relative h-80 m-2 md:h-96 md:mx-auto border-gray-400 ;
     width: calc(100% - 1rem);
     @media (min-width: 768px) {
         width: 30rem;
@@ -76,7 +70,7 @@ section{
 }
 
 .slider-img{
-    @apply h-full w-full outline-none
+    @apply h-full w-full object-cover
 }
 
 .slider-description{
@@ -93,9 +87,23 @@ footer{
 }
 
 .footer-nav-list{
-    @apply text-white text-xl font-extralight text-center mx-4 my-3 p-3 bg-gray-800 rounded-2xl hover:-translate-y-1 transition duration-300
+    @apply text-white text-xl font-extralight text-center mx-4 my-1 p-3 bg-gray-800 rounded-2xl hover:-translate-y-1 transition duration-300
 }
 
-.fade-news{
-    background-image: linear-gradient(to top left, #5f1c16, transparent);
+.nav{
+    animation: navFade .3s;
+
+    > *{
+        @apply mb-5 ml-7
+    }
+}
+
+@keyframes navFade {
+    0%{
+        opacity: 0;
+        
+    }
+    100%{
+        opacity: 1;
+    }
 }

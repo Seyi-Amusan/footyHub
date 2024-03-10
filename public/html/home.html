@@ -9,43 +9,65 @@
 </head>
 <body>
     <header class="w-screen h-screen mb-28">
-        <div class="absolute top-0 left-0 w-full h-full z-0 overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
             <video loop muted src="../assets/home-background-footage - Copy.mp4" class="min-w-full min-h-full object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></video>
         </div>
-        <div class="absolute top-0 w-full h-full foreground"></div>
+        <div class="absolute -z-10 top-0 w-full h-full foreground"></div>
 
-        
-
-        <!-- <div class="py-3 md:py-0 bg-transparent backdrop-blur-3xl  nav-div grid grid-flow-col justify-items-center items-center">
+        <div class="static z-0 bg-gradient-to-r  from-blue-950 to-red-800  bg-opacity-95 w-screen h-24 grid items-center justify-items-center nav-div">
             <div>
 
             </div>
-            <div class="w-4/5 h-4/5 md:h-1/2 text-center">
-                <input type="text" placeholder="Type the name of the player" class="h-full w-full bg-slate-50 bg-opacity-10 rounded-full">
+            <form action="get" class="w-full h-full grid items-center justify-items-center ">
+                <input class="w-4/5 h-2/3 px-5 rounded-full" type="text" placeholder="Cristiano Ronaldo">
+            </form>
+            <div class="h-auto static z-20 cursor-pointer">
+                <img id="nav-icon" src="../assets/icons/icon-open-menu.svg" alt="" class="w-24 min-w-16 min-h-min-w-16 max-h-20 pr-3">
             </div>
-            <button class="h-20 w-20 cursor-pointer absolute z-30 nav-icon justify-self-end"><img src="../assets/icons/icon-open-menu.svg" alt=""></button>
+
             
-        </div> -->
+        </div>
 
-        <!-- <nav class="h-screen w-96 bg-red-500 absolute z-20 top-0 right-0">
 
-        </nav> -->
+        <nav id="nav" class=" absolute z-10 top-0 right-0 w-72 h-screen grid content-center bg-red-800 hidden text-2xl text-black font-light">
+            <ul>
+                <li><a href="#">PLAYERS</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">TEAMS</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">MATCHES</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">LEAGUES</a></li>
+            </ul>
+            <ul>
+                <li><a href="#">NEWS</a></li>
+            </ul>
+        </nav>
 
         
 
-        <div class="header-heading w-4/5 md:w-auto text-slate-50 font-light rounded-3xl p-4 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-transparent backdrop-blur-3xl">
-            <h1 class="mb-3 lg:mb-6 text-center">Welcome To FootyHub</h1>     
-            <p class="text-sm lg:text-xl text-center uppercase">The ultimate destination for football enthusiast</p>
+        
+        
+
+        
+
+        <div class="header-heading w-4/5 md:w-auto text-slate-50 font-light rounded-3xl p-4 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r to-red-800 from-blue-950 bg-opacity-95">
+            <h1 class="mb-3 lg:mb-6 text-center">Welcome To FootyHub.</h1>     
+            <p class="text-sm lg:text-xl text-center uppercase">The ultimate destination for football enthusiast.</p>
         </div> 
     </header>
 
     <main>
         <section>
             <h2>QUICK LINKS</h2>
-            <div class="slider">
-                <div class="slider-content">
-                    <img src="" alt="" class="slider-img">
-                    <div class="slider-description text-black">
+            <div class="slider text-black">
+                <div class="slider-content relative overflow-hidden">
+                    <div class="h-full w-full absolute z-10 top-0 left-0 bg-gradient-to-br from-transparent to-gray-100"></div>
+                    <img id="quick-link-bg-img" src="../assets/images/ql-img-matches.jpg" alt="" class="slider-img absolute z-0">
+                    <div class="slider-description absolute z-20">
                         <h3 class="slider-heading" id="quick-link-heading">Matches</h3>
                         <div id="quick-link-text-box">
                             <p class="slider-text">View Upcoming Fixtures</p>
@@ -54,8 +76,8 @@
                         </div>
                     </div>
                 </div>
-                <button id="prev-quick-link"><img src="../assets/icons/icon-prev.svg" alt=""  class="absolute top-1/2 -translate-y-1/2 md:-translate-x-1/2 icon-next icon-next-prev"></button>
-                <button id="next-quick-link"><img src="../assets/icons/icon-next.svg" alt=""  class="absolute top-1/2 -translate-y-1/2 left-full md:-translate-x-1/2 icon-prev icon-next-prev"></button>
+                <button id="prev-quick-link" class="cursor-pointer"><img src="../assets/icons/icon-prev.svg" alt=""  class="absolute z-30 top-1/2 -translate-y-1/2 md:-translate-x-1/2 icon-next icon-next-prev"></button>
+                <button id="next-quick-link" class="cursor-pointer"><img src="../assets/icons/icon-next.svg" alt=""  class="absolute z-30 top-1/2 -translate-y-1/2 left-full md:-translate-x-1/2 icon-prev icon-next-prev"></button>
             </div>
         </section>
 
@@ -76,9 +98,9 @@
             </div>
         </section>
 
-        <footer class="pt-10 pb-6">
+        <footer class="pt-10 px-3 pb-6 bg-gradient-to-r to-red-800 from-blue-950 text-center text-white font-light">
             <nav class="mb-5">
-                <ul class="flex flex-wrap w-3/5 justify-center mx-auto">
+                <ul class="flex flex-wrap w-full justify-center mx-auto">
                     <li class="footer-nav-list"><a href="#">TEAM</a></li>
                     <li class="footer-nav-list"><a href="#">PLAYERS</a></li>
                     <li class="footer-nav-list"><a href="#">LEAGUES</a></li>
@@ -86,7 +108,19 @@
                     <li class="footer-nav-list"><a href="#">CONTACT US</a></li>
                 </ul>
             </nav>
-            <p class="text-black text-center">&COPY <a href="#" class="underline">Seyi Amusan</a> 2024</p>
+            <div class="mb-5">
+                <ul class="flex items-center justify-center ">
+                    <li><a href="#"><img src="../assets/icons/icon-linkedin.svg" alt="" class="w-10 mx-2"></a></li>
+                    <li><a href="#"><img src="../assets/icons/icon-whatsapp.svg" alt="" class="w-10 mx-2"></a></li>
+                    <li><a href="#"><img src="../assets/icons/icon-twitter.svg" alt="" class="w-10 mx-2"></a></li>
+                </ul>
+            </div>
+            <div class="mb-5"><p class="text-xl">Stay up-to-date with the latest football news and updates.</p></div>
+            <div class="mb-3">
+                <p>This website is not affiliated with any football league or organization. All trademarks and logos are the property of their respective owners.</p>
+                <p>Developed by: <a href="#" class="underline">Seyi Amusan</a></p>
+            </div>
+            <div><p>&COPY  2024. All rights reserved</p></div>
         </footer>
 
     </main>
