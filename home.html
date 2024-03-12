@@ -3,14 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../outputStyles.css">
+    <link rel="stylesheet" href="./public/outputStyles.css">
     <title>FootyHub</title>
-    <script src="../../public/index.js" defer></script>
+    <script src="./public/index.js" defer></script>
 </head>
 <body>
     <header class="w-screen h-screen mb-28">
         <div class="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
-            <video loop muted src="../assets/home-background-footage - Copy.mp4" class="min-w-full min-h-full object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></video>
+            <video autoplay loop muted src="./public/assets/home-background-footage.webm" class="min-w-full min-h-full object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></video>
         </div>
         <div class="absolute -z-10 top-0 w-full h-full foreground"></div>
 
@@ -22,7 +22,7 @@
                 <input class="w-4/5 h-2/3 px-5 rounded-full" type="text" placeholder="Cristiano Ronaldo">
             </form>
             <div class="h-auto static z-20 cursor-pointer">
-                <img id="nav-icon" src="../assets/icons/icon-open-menu.svg" alt="" class="w-24 min-w-16 min-h-min-w-16 max-h-20 pr-3">
+                <img id="nav-icon" src="./public/assets/icons/icon-open-menu.svg" alt="" class="w-24 min-w-16 min-h-min-w-16 max-h-20 pr-3">
             </div>
 
             
@@ -31,19 +31,16 @@
 
         <nav id="nav" class=" absolute z-10 top-0 right-0 w-72 h-screen grid content-center bg-red-800 hidden text-2xl text-black font-light">
             <ul>
-                <li><a href="#">PLAYERS</a></li>
+                <li><a href="./public/html/players.html">PLAYERS</a></li>
             </ul>
             <ul>
-                <li><a href="#">TEAMS</a></li>
+                <li><a href="./public/html/teams.html">TEAMS</a></li>
             </ul>
             <ul>
-                <li><a href="#">MATCHES</a></li>
+                <li><a href="./public/html/matches.html">MATCHES</a></li>
             </ul>
             <ul>
-                <li><a href="#">LEAGUES</a></li>
-            </ul>
-            <ul>
-                <li><a href="#">NEWS</a></li>
+                <li><a href="./public/html/leagues.html">LEAGUES</a></li>
             </ul>
         </nav>
 
@@ -62,11 +59,11 @@
 
     <main>
         <section>
-            <h2>QUICK LINKS</h2>
+            <h2>WHAT WE OFFER</h2>
             <div class="slider text-black">
                 <div class="slider-content relative overflow-hidden">
                     <div class="h-full w-full absolute z-10 top-0 left-0 bg-gradient-to-br from-transparent to-gray-100"></div>
-                    <img id="quick-link-bg-img" src="../assets/images/ql-img-matches.jpg" alt="" class="slider-img absolute z-0">
+                    <img id="quick-link-bg-img" src="./public/assets/images/ql-img-matches.jpg" alt="" class="slider-img absolute z-0">
                     <div class="slider-description absolute z-20">
                         <h3 class="slider-heading" id="quick-link-heading">Matches</h3>
                         <div id="quick-link-text-box">
@@ -76,8 +73,8 @@
                         </div>
                     </div>
                 </div>
-                <button id="prev-quick-link" class="cursor-pointer"><img src="../assets/icons/icon-prev.svg" alt=""  class="absolute z-30 top-1/2 -translate-y-1/2 md:-translate-x-1/2 icon-next icon-next-prev"></button>
-                <button id="next-quick-link" class="cursor-pointer"><img src="../assets/icons/icon-next.svg" alt=""  class="absolute z-30 top-1/2 -translate-y-1/2 left-full md:-translate-x-1/2 icon-prev icon-next-prev"></button>
+                <button id="prev-quick-link" class="cursor-pointer"><img src="./public/assets/icons/icon-prev.svg" alt=""  class="absolute z-30 top-1/2 -translate-y-1/2 md:-translate-x-1/2 icon-next icon-next-prev"></button>
+                <button id="next-quick-link" class="cursor-pointer"><img src="./public/assets/icons/icon-next.svg" alt=""  class="absolute z-30 top-1/2 -translate-y-1/2 left-full md:-translate-x-1/2 icon-prev icon-next-prev"></button>
             </div>
         </section>
 
@@ -93,8 +90,8 @@
                         <p id="news-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, inventore! Optio fuga saepe eius debitis impedit nulla ab voluptatum quos eaque </p>
                     </div>
                 </div>
-                <button id="prev-news"><img src="../assets/icons/icon-prev.svg" alt="" class="absolute top-1/2 -translate-y-1/2 md:-translate-x-1/2 icon-next icon-next-prev "></button>
-                <button id="next-news"><img src="../assets/icons/icon-next.svg" alt="" class="absolute top-1/2 -translate-y-1/2 left-full md:-translate-x-1/2 icon-prev icon-next-prev"></button>
+                <button id="prev-news"><img src="./public/assets/icons/icon-prev.svg" alt="" class="absolute top-1/2 -translate-y-1/2 md:-translate-x-1/2 icon-next icon-next-prev "></button>
+                <button id="next-news"><img src="./public/assets/icons/icon-next.svg" alt="" class="absolute top-1/2 -translate-y-1/2 left-full md:-translate-x-1/2 icon-prev icon-next-prev"></button>
             </div>
         </section>
 
@@ -110,9 +107,10 @@
             </nav>
             <div class="mb-5">
                 <ul class="flex items-center justify-center ">
-                    <li><a href="#"><img src="../assets/icons/icon-linkedin.svg" alt="" class="w-10 mx-2"></a></li>
-                    <li><a href="#"><img src="../assets/icons/icon-whatsapp.svg" alt="" class="w-10 mx-2"></a></li>
-                    <li><a href="#"><img src="../assets/icons/icon-twitter.svg" alt="" class="w-10 mx-2"></a></li>
+                    <li><a href="#"><img src="./public/assets/icons/icon-linkedin.svg" alt="" class="w-10 mx-2"></a></li>
+                    <li><a href="#"><img src="./public/assets/icons/icon-whatsapp.svg" alt="" class="w-10 mx-2"></a></li>
+                    <li><a href="#"><img src="./public/assets/icons/icon-twitter.svg" alt="" class="w-10 mx-2"></a></li>
+                    <li><a href="#"><img src="./public/assets/icons/icon-github-white.svg" alt="" class="w-10 mx-2"></a></li>
                 </ul>
             </div>
             <div class="mb-5"><p class="text-xl">Stay up-to-date with the latest football news and updates.</p></div>

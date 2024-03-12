@@ -18,13 +18,13 @@ const nextQuickLinkBtn = document.querySelector('#next-quick-link')
 const nav = document.querySelector('#nav')
 const navIcon = document.querySelector('#nav-icon')
 
-async function getNews () {
-    const response = await fetch(newsApiUrl)
-    const news = await response.json()
-    console.log(news.articles);
-}
+// async function getNews () {
+//     const response = await fetch(newsApiUrl)
+//     const news = await response.json()
+//     console.log(news.articles);
+// }
 
-getNews()
+// getNews()
 
 const quickLinkInfo = [
     {
@@ -52,9 +52,9 @@ const quickLinkInfo = [
 ]
 const navFunc = () => {
     if (navIcon.src.includes('open')) {
-        navIcon.src = '../assets/icons/icon-close-menu.svg'
+        navIcon.src = './public/assets/icons/icon-close-menu.svg'
     } else{
-        navIcon.src = '../assets/icons/icon-open-menu.svg'
+        navIcon.src = './public/assets/icons/icon-open-menu.svg'
     }
     nav.classList.toggle('hidden')
     nav.classList.toggle('nav')

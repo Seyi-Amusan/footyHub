@@ -1,6 +1,6 @@
 # FootyHub
 
-![FootyHub Logo](link_to_logo)
+<!-- ![FootyHub Logo](link_to_logo) -->
 
 ## Overview
 
@@ -20,15 +20,10 @@ FootyHub is a football-focused web application designed to provide users with co
   - HTML5
   - CSS3
   - JavaScript (ES6+)
-  - React.js
-
-- **Backend**:
-  - Node.js
-  - Express.js
-  - MongoDB (for storing data)
+  - Tailwind CSS
 
 - **APIs**:
-  - [API Name]: Description
+  - [News API]: Description
   - [API Name]: Description
 
 ## Installation
@@ -56,10 +51,7 @@ Contributions to FootyHub are welcome! If you'd like to contribute to the projec
 4. Push to the branch: `git push origin feature/new-feature`
 5. Submit a pull request.
 
-## License
-
-This project is licensed under the [MIT License](link_to_license).
 
 ## Contact
 
-For questions or inquiries about FootyHub, please contact [Your Name](mailto:your_email@example.com).
+For questions or inquiries about FootyHub, please contact [Seyi Amusan](mailto:seyijoshua14@gmail.com).
