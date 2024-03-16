@@ -1,4 +1,4 @@
-const newsApiUrl = 'https://newsapi.org/v2/everything?q=football&apiKey=99501be7612b4d8aaef45cac789260cc'
+const newsApiUrl = 'https://newsapi.org/v2/everything?q=football soccer&apiKey=99501be7612b4d8aaef45cac789260cc'
 
 const newsImg = document.querySelector('.news-img')
 const newsHeading = document.querySelector('#news-heading')
@@ -18,38 +18,61 @@ const nextQuickLinkBtn = document.querySelector('#next-quick-link')
 const nav = document.querySelector('#nav')
 const navIcon = document.querySelector('#nav-icon')
 
-// async function getNews () {
-//     const response = await fetch(newsApiUrl)
-//     const news = await response.json()
-//     console.log(news.articles);
-// }
-
-// getNews()
-
 const quickLinkInfo = [
     {
         'heading': 'Matches',
         'text': ['View Upcoming Fixtures', 'Check Match Results', 'Explore Match Highlights'],
-        'src': '../assets/images/ql-img-matches.jpg'
+        'src': './public/assets/images/ql-img-matches.jpg'
     },
 
     {
         'heading': 'Leagues',
         'text': ['Discover League Standings', 'Explore Season Overview', 'Learn About Different Leagues'],
-        'src': '../assets/images/ql-img-leagues.jpg'
+        'src': './public/assets/images/ql-img-leagues.jpg'
     },
 
     {
         'heading': 'Players',
         'text': ['Explore Player Profiles', 'Discover Top Performers', 'Learn About Player Statistics'],
-        'src': '../assets/images/ql-img-players.jpg'
+        'src': './public/assets/images/ql-img-players.jpg'
     },
     {
         'heading': 'Teams',
         'text': ['View Team Rosters', 'Explore Team History', 'Check Team Performance'],
-        'src': '../assets/images/ql-img-teams.jpg'
+        'src': './public/assets/images/ql-img-teams.jpg'
     }
 ]
+
+let quickLinkIndex = 0;
+let newsIndex = 1;
+
+
+fetch(newsApiUrl)
+.then(response => response.json())
+.then(data => {
+
+    nextNewsBtn.addEventListener('click', () => {
+        newsIndex = getNextIndex(newsIndex, 90)
+        displayNews(data.articles, newsIndex)
+    })
+    prevNewsBtn.addEventListener('click', () => {
+        newsIndex = getPrevIndex(newsIndex, 90)
+        displayNews(data.articles, newsIndex)
+    })
+    
+})
+
+
+const displayNews = (newsArr, newsIndex) => {
+    let news = newsArr[newsIndex]
+
+    newsHeading.innerText = news.title
+    newsText.innerText = news.description
+    newsImg.src = news.urlToImage
+    newsLink.href = news.url
+}
+
+
 const navFunc = () => {
     if (navIcon.src.includes('open')) {
         navIcon.src = './public/assets/icons/icon-close-menu.svg'
@@ -57,20 +80,19 @@ const navFunc = () => {
         navIcon.src = './public/assets/icons/icon-open-menu.svg'
     }
     nav.classList.toggle('hidden')
+    nav.classList.toggle('grid')
     nav.classList.toggle('nav')
 
     return
 }
 
 
-let quickLinkIndex = 0;
-
 const getNextIndex = (currIndex, maxIndex) => {
     if (currIndex == maxIndex - 1) {
-        return 0; // Return 0 when resetting the index
+        return 0; 
     }
     currIndex += 1;
-    return currIndex; // Return the updated index
+    return currIndex; 
 };
 
 const getPrevIndex = (currIndex, maxIndex) => {
@@ -88,6 +110,7 @@ const displayQuickLinkInfo = (quickLinkIndex) => {
     quickLinkImg.src = quickLinkInfo[quickLinkIndex].src
 }
 
+navIcon.addEventListener('click', navFunc)
 
 nextQuickLinkBtn.addEventListener('click', () => {
     quickLinkIndex = getNextIndex(quickLinkIndex, 4)
@@ -97,7 +120,6 @@ prevQuickLinkBtn.addEventListener('click', () => {
     quickLinkIndex = getPrevIndex(quickLinkIndex, 4)
     displayQuickLinkInfo(quickLinkIndex)
 })
-navIcon.addEventListener('click', navFunc)
 
 
 

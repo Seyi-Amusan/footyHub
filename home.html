@@ -9,12 +9,8 @@
 </head>
 <body>
     <header class="w-screen h-screen mb-28">
-        <div class="absolute top-0 left-0 w-full h-full -z-10 overflow-hidden">
-            <video autoplay loop muted src="./public/assets/home-background-footage.webm" class="min-w-full min-h-full object-cover absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></video>
-        </div>
-        <div class="absolute -z-10 top-0 w-full h-full foreground"></div>
 
-        <div class="static z-0 bg-gradient-to-r  from-blue-950 to-red-800  bg-opacity-95 w-screen h-24 grid items-center justify-items-center nav-div">
+        <div  class="static z-0 bg-gradient-to-r  from-blue-950 to-red-800  bg-opacity-95 w-screen h-24 grid items-center justify-items-center nav-div">
             <div>
 
             </div>
@@ -26,10 +22,10 @@
             </div>
 
             
-        </div>
+        </div> 
 
 
-        <nav id="nav" class=" absolute z-10 top-0 right-0 w-72 h-screen grid content-center bg-red-800 hidden text-2xl text-black font-light">
+        <nav id="nav" class=" absolute z-10 top-0 right-0 w-72 h-screen content-center bg-red-800 hidden text-2xl text-black font-light">
             <ul>
                 <li><a href="./public/html/players.html">PLAYERS</a></li>
             </ul>
@@ -43,15 +39,9 @@
                 <li><a href="./public/html/leagues.html">LEAGUES</a></li>
             </ul>
         </nav>
-
         
 
-        
-        
-
-        
-
-        <div class="header-heading w-4/5 md:w-auto text-slate-50 font-light rounded-3xl p-4 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r to-red-800 from-blue-950 bg-opacity-95">
+        <div class="h-1/2 font-bold md:font-light grid justify-center content-center header-heading w-4/5 md:w-auto text-slate-50 rounded-3xl p-4 absolute left-1/2 -translate-x-1/2 -translate-y-1/2 bg-gradient-to-r to-red-800 from-blue-950 bg-opacity-95">
             <h1 class="mb-3 lg:mb-6 text-center">Welcome To FootyHub.</h1>     
             <p class="text-sm lg:text-xl text-center uppercase">The ultimate destination for football enthusiast.</p>
         </div> 
@@ -62,7 +52,7 @@
             <h2>WHAT WE OFFER</h2>
             <div class="slider text-black">
                 <div class="slider-content relative overflow-hidden">
-                    <div class="h-full w-full absolute z-10 top-0 left-0 bg-gradient-to-br from-transparent to-gray-100"></div>
+                    <div class="h-full w-full absolute z-10 top-0 left-0 bg-gradient-to-tl from-slate-300 to-transparent"></div>
                     <img id="quick-link-bg-img" src="./public/assets/images/ql-img-matches.jpg" alt="" class="slider-img absolute z-0">
                     <div class="slider-description absolute z-20">
                         <h3 class="slider-heading" id="quick-link-heading">Matches</h3>
@@ -82,13 +72,14 @@
         <section>
             <h2 class="">LATEST NEWS</h2>
             <div class="slider">
-                <div class="slider-content mb-96 overflow-hidden">
-                    <img src="" alt="" class="slider-img news-img">
-                    <a href="#" target="_blank" class="h-full w-full fade-news cursor-pointer" id="news-link"></a>
+                <div class="slider-content overflow-hidden">
+                    <img src="https://a4.espncdn.com/combiner/i?img=%2Fphoto%2F2024%2F0309%2Fr1302558_1296x729_16%2D9.jpg" alt="" class="slider-img news-img">
+                    <div class="h-full w-full bg-gradient-to-tl from-slate-300 to-transparent"></div>
                     <div class="slider-description">
-                        <h3 class="slider-heading" id="news-heading">News Heading</h3>
-                        <p id="news-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Tenetur, inventore! Optio fuga saepe eius debitis impedit nulla ab voluptatum quos eaque </p>
+                        <h3 class="slider-heading" id="news-heading">European soccer this weekend: Havertz keeps Arsenal title push on course</h3>
+                        <p id="news-text">Kai Havertz kept Arsenal in the Premier League title race, while Inter put Serie A's all but out of reach. What did you miss in Europe this weekend?</p>
                     </div>
+                    <a href="https://www.espn.com/soccer/story/_/id/39693553/european-soccer-league-weekend-news-results-highlights-storylines-stats" target="_blank" class="h-full w-full  cursor-pointer" id="news-link"></a>
                 </div>
                 <button id="prev-news"><img src="./public/assets/icons/icon-prev.svg" alt="" class="absolute top-1/2 -translate-y-1/2 md:-translate-x-1/2 icon-next icon-next-prev "></button>
                 <button id="next-news"><img src="./public/assets/icons/icon-next.svg" alt="" class="absolute top-1/2 -translate-y-1/2 left-full md:-translate-x-1/2 icon-prev icon-next-prev"></button>
@@ -107,10 +98,10 @@
             </nav>
             <div class="mb-5">
                 <ul class="flex items-center justify-center ">
-                    <li><a href="#"><img src="./public/assets/icons/icon-linkedin.svg" alt="" class="w-10 mx-2"></a></li>
+                    <li><a href="https://ng.linkedin.com/in/seyi-amusan-414895294?trk=people-guest_people_search-card"><img src="./public/assets/icons/icon-linkedin.svg" alt="" class="w-10 mx-2"></a></li>
                     <li><a href="#"><img src="./public/assets/icons/icon-whatsapp.svg" alt="" class="w-10 mx-2"></a></li>
                     <li><a href="#"><img src="./public/assets/icons/icon-twitter.svg" alt="" class="w-10 mx-2"></a></li>
-                    <li><a href="#"><img src="./public/assets/icons/icon-github-white.svg" alt="" class="w-10 mx-2"></a></li>
+                    <li><a href="https://github.com/Seyi-Amusan"><img src="./public/assets/icons/icon-github-white.svg" alt="" class="w-9 mx-2"></a></li>
                 </ul>
             </div>
             <div class="mb-5"><p class="text-xl">Stay up-to-date with the latest football news and updates.</p></div>
