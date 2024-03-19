@@ -1,4 +1,4 @@
-const newsApiUrl = 'https://newsapi.org/v2/everything?q=football soccer&apiKey=99501be7612b4d8aaef45cac789260cc'
+const newsApiUrl = `https://newsapi.org/v2/everything?q=FIFA soccer soccer&apiKey=99501be7612b4d8aaef45cac789260cc&pageSize=30`
 
 const newsImg = document.querySelector('.news-img')
 const newsHeading = document.querySelector('#news-heading')
@@ -52,11 +52,12 @@ fetch(newsApiUrl)
 .then(data => {
 
     nextNewsBtn.addEventListener('click', () => {
-        newsIndex = getNextIndex(newsIndex, 90)
+        newsIndex = getNextIndex(newsIndex, 30)
         displayNews(data.articles, newsIndex)
+        console.log(data.articles);
     })
     prevNewsBtn.addEventListener('click', () => {
-        newsIndex = getPrevIndex(newsIndex, 90)
+        newsIndex = getPrevIndex(newsIndex, 30)
         displayNews(data.articles, newsIndex)
     })
     
