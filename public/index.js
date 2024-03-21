@@ -1,6 +1,4 @@
-require('dotenv').config();
-
-const newsApiUrl = `https://newsapi.org/v2/everything?q=FIFA soccer soccer&apiKey=${process.env.NEWS_API_KEY}&pageSize=30`
+const newsApiUrl = `https://newsapi.org/v2/everything?q=FIFA soccer soccer&apiKey=99501be7612b4d8aaef45cac789260cc&pageSize=30`
 
 const newsImg = document.querySelector('.news-img')
 const newsHeading = document.querySelector('#news-heading')
